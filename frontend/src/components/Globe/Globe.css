@@ -1,0 +1,76 @@
+/* Globe Component Styles */
+.globe-container {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    min-height: 500px;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    background: radial-gradient(ellipse at center, #0d1b2a 0%, #0a0e17 70%);
+    border: 1px solid var(--border-color);
+    cursor: grab;
+}
+
+.globe-container:active {
+    cursor: grabbing;
+}
+
+.globe-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.globe-overlay-info {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.globe-hint {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(10, 14, 23, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(6, 182, 212, 0.15);
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+.hint-icon {
+    font-size: 1rem;
+}
+
+.globe-tooltip {
+    background: rgba(10, 14, 23, 0.95);
+    border: 1px solid var(--accent-cyan);
+    border-radius: var(--radius-md);
+    padding: 6px 12px;
+    color: var(--accent-cyan);
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: var(--font-mono);
+    white-space: nowrap;
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .globe-container {
+        height: 50vh;
+        min-height: 350px;
+    }
+
+    .globe-overlay-info {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+    }
+}
