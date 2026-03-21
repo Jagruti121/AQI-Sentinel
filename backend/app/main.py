@@ -22,7 +22,11 @@ app = FastAPI(
 # CORS Configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://your-frontend-url.onrender.com"], # You'll update this later
+    allow_origins=[
+        "https://aqi-sentinel-1.onrender.com",
+        "https://aqi-sentinel-1.onrender.com/",
+        "http://localhost:5173"
+    ], # Updated for Render deployment and local dev
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
